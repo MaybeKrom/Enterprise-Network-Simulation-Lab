@@ -1,0 +1,32 @@
+! R2 Core Router Configuration
+version 12.4
+hostname R2
+
+! LAN Interface (Gateway for DNS, VoIP & Client 2)
+interface FastEthernet0/0
+ ip address 166.15.64.1 255.255.240.0
+ duplex half
+
+! Link to R1 (Left)
+interface FastEthernet1/0
+ ip address 166.15.80.2 255.255.240.0
+ duplex half
+
+! Link to R3 (Right)
+interface FastEthernet2/0
+ ip address 166.15.128.1 255.255.240.0
+ duplex half
+
+! Link to R4 (Bottom)
+interface FastEthernet3/0
+ ip address 166.15.144.1 255.255.240.0
+ duplex auto
+ speed auto
+
+! OSPF Configuration (Full Mesh)
+router ospf 1
+ log-adjacency-changes
+ network 166.15.64.0 0.0.15.255 area 0
+ network 166.15.80.0 0.0.15.255 area 0
+ network 166.15.128.0 0.0.15.255 area 0
+ network 166.15.144.0 0.0.15.255 area 0
