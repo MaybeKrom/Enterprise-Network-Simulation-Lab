@@ -44,12 +44,3 @@ For the VoIP server, the web dashboard wouldn't load. I realized the Linux firew
 
 ### Screenshots
 *(See the /screenshots folder for more)*
-
-**The Network Topology:**
-![Topology](screenshots/Network_Topology.png)
-
-**Proof: Web Server Working:**
-![Web](screenshots/Accessing website from outside the network.png)
-
-**Proof: FTP Working:**
-![FTP](screenshots/Accessing FTP server from outside the network.png)
