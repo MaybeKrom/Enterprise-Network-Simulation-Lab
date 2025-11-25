@@ -46,4 +46,4 @@ For the VoIP server, the web dashboard wouldn't load. I realized the Linux firew
 *(See the /screenshots folder for more)*
 
 **The Network Topology:**
-![Topology](screenshots/Network_Topology.png)
+![Topology](Network_Topology.png)
