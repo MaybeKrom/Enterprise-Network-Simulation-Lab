@@ -1,0 +1,32 @@
+! R3 Core Router Configuration
+version 12.4
+hostname R3
+
+! LAN Interface (Gateway for FTP Server & Client 3)
+interface FastEthernet0/0
+ ip address 166.15.16.1 255.255.240.0
+ duplex half
+
+! Link to R2 (Top)
+interface FastEthernet1/0
+ ip address 166.15.128.2 255.255.240.0
+ duplex half
+
+! Link to R4 (Bottom)
+interface FastEthernet2/0
+ ip address 166.15.160.1 255.255.240.0
+ duplex half
+
+! Link to R1 (Left)
+interface FastEthernet3/0
+ ip address 166.15.96.2 255.255.240.0
+ duplex auto
+ speed auto
+
+! OSPF Configuration (Full Mesh)
+router ospf 1
+ log-adjacency-changes
+ network 166.15.16.0 0.0.15.255 area 0
+ network 166.15.96.0 0.0.15.255 area 0
+ network 166.15.128.0 0.0.15.255 area 0
+ network 166.15.160.0 0.0.15.255 area 0
